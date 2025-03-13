@@ -7,7 +7,7 @@ auth_check_menu($auth, $sub_menu, 'r');
 $sql_common = " from {$g5['board_table']} a ";
 $sql_search = " where (1) ";
 
-if ($is_admin != "super") {
+if ($is_admin != "superadmin") { // 코드 변경됨
     $sql_common .= " , {$g5['group_table']} b ";
     $sql_search .= " and (a.gr_id = b.gr_id and b.gr_admin = '{$member['mb_id']}') ";
 }
